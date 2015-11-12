@@ -1,0 +1,26 @@
+{
+  "name": "andycoles",
+  "keywords": "andy, coles, portfolio",
+  "description": "personal website with guest user authentical and sessions",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andycoles/andycoles.git"
+  },
+  "author": "Andy Coles <acoless408@gmail.com> (https://andypi.ddns.net)",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "*",
+    "body-parser": "^1.14.1",
+    "express": "^4.10.5",
+    "method-override": "^2.3.5",
+    "mongodb": "*",
+    "mongoose": "^4.1.9",
+    "underscore": "~1.5.2"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  }
+}
