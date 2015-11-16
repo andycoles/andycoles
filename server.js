@@ -15,7 +15,7 @@ var express = require("express"),
 
     var adminUser = new User({
       username: "admin",
-      password: "blamo!.."
+      password: config.defaultPass
     });
 
     adminUser.save();
