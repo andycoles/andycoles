@@ -5,6 +5,8 @@ app.models.credentials = Backbone.Model.extend({
     password: ''
   },
 
+  url: app.API + '/auth/login',
+
   validate: function(attrs) {
     if (attrs.username === undefined) {
       return 'You must enter a username';

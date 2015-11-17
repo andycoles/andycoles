@@ -15,9 +15,16 @@
     "bcrypt": "*",
     "body-parser": "^1.14.1",
     "express": "^4.10.5",
+    "express-session": "^1.10.1",
     "method-override": "^2.3.5",
     "mongodb": "*",
     "mongoose": "^4.1.9",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0",
+    "cookie-parser": "^1.3.3",
+    "morgan": "^1.5.1",
+    "serve-favicon": "^2.2.0",
     "underscore": "~1.5.2"
   },
   "engines": {

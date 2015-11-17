@@ -1,6 +1,7 @@
 var app = (function() {
 
   var api = {
+    API: "/api",
     views: {},
     models: {},
     collections: {},
@@ -24,7 +25,7 @@ var app = (function() {
   var ViewsFactory = {
     login: function() {
       if(!this.loginView) {
-        var credModel = new api.models.credentials()
+        var credModel = new api.models.credentials();
         this.loginView = new api.views.login({
           el: $("#content"),
           model: credModel

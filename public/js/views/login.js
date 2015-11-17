@@ -28,11 +28,17 @@ app.views.login = Backbone.View.extend({
     event.stopPropagation();
     event.preventDefault();
 
-    console.log(this.model);
+    var un = this.$el.find('input[name=username]').val();
+    var pw = this.$el.find('input[name=password]').val();
 
-    var user = this.model.get('username');
-    var pword = this.model.get('password');
+    this.model.save({
+      username: un,
+      password: pw
+    }, {
+      error: function(model, res, opts) {console.log(res.message)},
+      success: function(model, res, opts) {console.log(res.message + " user:" + res.user)}
+    });
 
-    console.log("login - username: " + user + " - password: " + pword);
+    console.log("login - username: " + un + " - password: " + pw);
   }
 });
