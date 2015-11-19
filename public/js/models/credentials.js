@@ -8,21 +8,17 @@ app.models.credentials = Backbone.Model.extend({
   url: app.API + '/auth/login',
 
   validate: function(attrs) {
-    if (attrs.username === undefined) {
-      return 'You must enter a username';
+    var un = attrs.username;
+    var pw = attrs.password;
+    if ((un === undefined || un == "") && (pw === undefined || pw == "")) {
+      return 'Please provide a valid username & password';
     }
-  },
-
-  initialize: function() {
-    console.log('The credentials model has been initialized');
-
-    this.on('change:username', function() {
-      console.log('model - username values for this model have changed');
-    });
-
-    this.on('invalid', function(model, error) {
-      console.log(error);
-    });
+    if (un === undefined || un == "") {
+      return 'Please provide a username';
+    }
+    if (pw === undefined || pw == "") {
+      return 'Please provide a password';
+    }
   }
 
 });

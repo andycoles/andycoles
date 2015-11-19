@@ -1,27 +1,17 @@
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
+var controllers = require('../controllers/index');
 
-var router = express.Router();
+// check to see if the user is already logged in
+router.get('/', controllers.getLogin);
 
 router.get('/api/auth/', function (req, res) {
   res.redirect('/', { user : req.user });
 });
 
-router.get('/api/auth/login', function(req, res) {
-  res.redirect('/', { user : req.user });
-});
-
-router.post('/api/auth/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
-    if (err) { return next(err); }
-    if (!user) { return res.redirect('/'); }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      return res.send({success:true, message:"Login successful.", user:user});
-    });
-  })(req, res, next);
-});
+router.get('/api/auth/login', controllers.getLogin);
+router.post('/api/auth/login', controllers.login);
 
 router.get('/api/auth/logout', function(req, res) {
   req.logout();
